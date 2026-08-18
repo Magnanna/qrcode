@@ -28,3 +28,4 @@ scanner/*.iml
 # misc
 .DS_Store
 *.pem
+.claude/
