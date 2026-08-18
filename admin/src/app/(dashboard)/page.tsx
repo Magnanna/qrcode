@@ -28,7 +28,7 @@ export default async function LivePage() {
       </div>
 
       <Card className="p-0">
-        <div className="border-b border-neutral-200 px-6 py-4 dark:border-neutral-900">
+        <div className="border-b border-neutral-200 px-6 py-4">
           <h2 className="text-[15px] font-semibold">Recent Scans</h2>
         </div>
         <LiveFeed initialEvents={recentEvents ?? []} />

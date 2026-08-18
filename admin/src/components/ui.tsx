@@ -13,13 +13,7 @@ export function PageHeader({ title, subtitle, action }: { title: string; subtitl
 }
 
 export function Card({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return (
-    <div
-      className={`rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-900 dark:bg-neutral-950 ${className}`}
-    >
-      {children}
-    </div>
-  );
+  return <div className={`card card-border rounded-2xl bg-base-100 border-base-200 p-6 ${className}`}>{children}</div>;
 }
 
 export function StatTile({ label, value }: { label: string; value: string | number }) {
@@ -32,20 +26,18 @@ export function StatTile({ label, value }: { label: string; value: string | numb
 }
 
 const badgeStyles: Record<string, string> = {
-  pending: "bg-neutral-100 text-neutral-600 dark:bg-neutral-900 dark:text-neutral-400",
-  checked_in: "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-400",
-  revoked: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-400",
-  success: "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-400",
-  duplicate: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-400",
-  flagged: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-400",
-  not_found: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-400",
+  pending: "badge-neutral",
+  checked_in: "badge-success",
+  revoked: "badge-error",
+  success: "badge-success",
+  duplicate: "badge-warning",
+  flagged: "badge-error",
+  not_found: "badge-error",
 };
 
 export function Badge({ status }: { status: string }) {
   return (
-    <span
-      className={`inline-flex items-center rounded-full px-2.5 py-1 text-[12px] font-medium capitalize ${badgeStyles[status] ?? "bg-neutral-100 text-neutral-600"}`}
-    >
+    <span className={`badge badge-soft ${badgeStyles[status] ?? "badge-neutral"} capitalize`}>
       {status.replace("_", " ")}
     </span>
   );
@@ -57,23 +49,14 @@ export function Button({
   className = "",
   ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" }) {
-  const base = "rounded-xl px-4 py-2.5 text-[14px] font-medium transition disabled:opacity-50";
-  const styles =
-    variant === "primary"
-      ? "bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
-      : "border border-neutral-200 text-neutral-700 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-900";
+  const styles = variant === "primary" ? "btn-neutral" : "btn-outline";
   return (
-    <button className={`${base} ${styles} ${className}`} {...props}>
+    <button className={`btn rounded-xl ${styles} ${className}`} {...props}>
       {children}
     </button>
   );
 }
 
 export function Input(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  return (
-    <input
-      {...props}
-      className={`w-full rounded-xl border border-neutral-200 bg-white px-3.5 py-2.5 text-[14px] outline-none transition focus:border-neutral-400 focus:ring-4 focus:ring-neutral-100 dark:border-neutral-800 dark:bg-neutral-900 dark:focus:ring-neutral-900 ${props.className ?? ""}`}
-    />
-  );
+  return <input {...props} className={`input rounded-xl w-full ${props.className ?? ""}`} />;
 }

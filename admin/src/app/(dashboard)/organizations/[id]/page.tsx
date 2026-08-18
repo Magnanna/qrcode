@@ -29,7 +29,7 @@ export default async function OrganizationDetailPage({ params }: { params: Promi
 
   return (
     <div>
-      <Link href="/organizations" className="mb-4 inline-block text-[13px] text-neutral-500 hover:text-black dark:hover:text-white">
+      <Link href="/organizations" className="mb-4 inline-block text-[13px] text-neutral-500 hover:text-black">
         ← Organizations
       </Link>
       <PageHeader title={org.name} subtitle={org.coordinator_email ?? undefined} />
@@ -46,11 +46,11 @@ export default async function OrganizationDetailPage({ params }: { params: Promi
       </div>
 
       <Card className="p-0">
-        <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4 dark:border-neutral-900">
+        <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
           <h2 className="text-[15px] font-semibold">Guests</h2>
           <BulkSendTickets orgId={org.id} />
         </div>
-        <div className="divide-y divide-neutral-100 dark:divide-neutral-900">
+        <div className="divide-y divide-neutral-100">
           {(guests ?? []).map((guest) => (
             <div key={guest.id} className="flex items-center justify-between px-6 py-3.5">
               <div>

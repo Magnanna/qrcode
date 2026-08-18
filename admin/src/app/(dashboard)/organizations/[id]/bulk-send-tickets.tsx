@@ -19,7 +19,7 @@ export function BulkSendTickets({ orgId }: { orgId: string }) {
             setResult(`Sent ${sent}${failed ? `, ${failed} failed` : ""}`);
           })
         }
-        className="text-[13px] font-medium text-neutral-500 hover:text-black disabled:opacity-50 dark:hover:text-white"
+        className="text-[13px] font-medium text-neutral-500 hover:text-black disabled:opacity-50"
       >
         {isPending ? "Sending…" : "Send All Pending Tickets"}
       </button>

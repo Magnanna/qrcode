@@ -13,7 +13,7 @@ export function SignOutButton() {
         await supabase.auth.signOut();
         router.push("/login");
       }}
-      className="w-full rounded-lg px-3 py-2 text-left text-[13px] font-medium text-neutral-500 transition hover:bg-neutral-100 hover:text-black dark:hover:bg-neutral-900 dark:hover:text-white"
+      className="w-full rounded-lg px-3 py-2 text-left text-[13px] font-medium text-neutral-500 transition hover:bg-neutral-100 hover:text-black"
     >
       Sign Out
     </button>

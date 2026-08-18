@@ -32,14 +32,14 @@ export function AddStaffForm() {
         <Input name="email" type="email" placeholder="Email" required />
         <select
           name="role"
-          className="rounded-xl border border-neutral-200 bg-white px-3.5 py-2.5 text-[14px] outline-none dark:border-neutral-800 dark:bg-neutral-900"
+          className="select rounded-xl"
         >
           <option value="scanner">Scanner</option>
           <option value="supervisor">Supervisor</option>
           <option value="admin">Admin</option>
         </select>
         {error && (
-          <p className="col-span-3 rounded-lg bg-red-50 px-3 py-2 text-[13px] text-red-600 dark:bg-red-950 dark:text-red-400">
+          <p className="col-span-3 rounded-lg bg-red-50 px-3 py-2 text-[13px] text-red-600">
             {error}
           </p>
         )}

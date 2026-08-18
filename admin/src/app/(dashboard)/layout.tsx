@@ -26,10 +26,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
     .maybeSingle();
 
   return (
-    <div className="flex min-h-screen bg-neutral-50 dark:bg-black">
-      <aside className="flex w-64 shrink-0 flex-col border-r border-neutral-200 px-4 py-6 dark:border-neutral-900">
+    <div className="flex min-h-screen bg-neutral-50">
+      <aside className="flex w-64 shrink-0 flex-col border-r border-neutral-200 px-4 py-6">
         <div className="mb-8 flex items-center gap-2 px-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white dark:bg-white dark:text-black">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-black text-white">
             <span className="text-sm">◎</span>
           </div>
           <span className="text-[15px] font-semibold tracking-tight">Gatekeeper</span>
@@ -40,14 +40,14 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-[14px] font-medium text-neutral-600 transition hover:bg-neutral-100 hover:text-black dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-white"
+              className="rounded-lg px-3 py-2 text-[14px] font-medium text-neutral-600 transition hover:bg-neutral-100 hover:text-black"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="mt-auto space-y-3 border-t border-neutral-200 pt-4 px-2 dark:border-neutral-900">
+        <div className="mt-auto space-y-3 border-t border-neutral-200 pt-4 px-2">
           <div>
             <p className="text-[13px] font-medium">{staff?.name ?? user.email}</p>
             <p className="text-[12px] capitalize text-neutral-500">{staff?.role ?? "unassigned"}</p>

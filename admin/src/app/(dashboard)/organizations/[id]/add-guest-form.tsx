@@ -25,7 +25,7 @@ export function AddGuestForm({ orgId, tables }: { orgId: string; tables: { id: s
         <Input name="email" type="email" placeholder="Guest email (optional)" />
         <select
           name="table_id"
-          className="w-full rounded-xl border border-neutral-200 bg-white px-3.5 py-2.5 text-[14px] outline-none dark:border-neutral-800 dark:bg-neutral-900"
+          className="select rounded-xl w-full"
         >
           <option value="">No table assigned</option>
           {tables.map((t) => (
@@ -34,7 +34,7 @@ export function AddGuestForm({ orgId, tables }: { orgId: string; tables: { id: s
             </option>
           ))}
         </select>
-        <label className="flex items-center gap-2 text-[13px] text-neutral-600 dark:text-neutral-400">
+        <label className="flex items-center gap-2 text-[13px] text-neutral-600">
           <input type="checkbox" name="is_walkin" className="rounded" />
           Walk-in guest
         </label>

@@ -34,7 +34,7 @@ export function NewTableForm({ orgs }: { orgs: { id: string; name: string }[] })
         <Input name="capacity" type="number" placeholder="Capacity" defaultValue={10} min={1} required />
         <select
           name="org_id"
-          className="rounded-xl border border-neutral-200 bg-white px-3.5 py-2.5 text-[14px] outline-none dark:border-neutral-800 dark:bg-neutral-900"
+          className="select rounded-xl"
         >
           <option value="">Unassigned</option>
           {orgs.map((org) => (

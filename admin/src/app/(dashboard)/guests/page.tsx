@@ -29,7 +29,7 @@ export default async function GuestsPage({
       </div>
 
       <Card className="p-0">
-        <div className="divide-y divide-neutral-100 dark:divide-neutral-900">
+        <div className="divide-y divide-neutral-100">
           {(guests ?? []).map((guest) => (
             <div key={guest.id} className="flex items-center justify-between px-6 py-3.5">
               <div>

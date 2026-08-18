@@ -51,7 +51,7 @@ export function CsvImport({ orgId }: { orgId: string }) {
           const file = e.target.files?.[0];
           if (file) handleFile(file);
         }}
-        className="w-full text-[13px] file:mr-4 file:rounded-lg file:border-0 file:bg-neutral-100 file:px-3.5 file:py-2 file:text-[13px] file:font-medium file:text-neutral-700 dark:file:bg-neutral-900 dark:file:text-neutral-300"
+        className="w-full text-[13px] file:mr-4 file:rounded-lg file:border-0 file:bg-neutral-100 file:px-3.5 file:py-2 file:text-[13px] file:font-medium file:text-neutral-700"
       />
       {status && <p className="mt-3 text-[13px] text-neutral-500">{status}</p>}
       {isPending && <p className="mt-3 text-[13px] text-neutral-500">Importing…</p>}

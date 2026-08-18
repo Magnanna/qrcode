@@ -26,10 +26,10 @@ export default async function SettingsPage() {
           </div>
 
           <Card className="p-0">
-            <div className="border-b border-neutral-200 px-6 py-4 dark:border-neutral-900">
+            <div className="border-b border-neutral-200 px-6 py-4">
               <h2 className="text-[15px] font-semibold">Staff</h2>
             </div>
-            <div className="divide-y divide-neutral-100 dark:divide-neutral-900">
+            <div className="divide-y divide-neutral-100">
               {(staff ?? []).map((s) => (
                 <div key={s.id} className="flex items-center justify-between px-6 py-3.5">
                   <div>

@@ -36,7 +36,7 @@ export default async function TablesPage() {
                 <DeleteTableButton tableId={table.id} />
               </div>
               <p className="mt-4 text-[13px] text-neutral-500">
-                <strong className="font-semibold text-black dark:text-white">{occupancy}</strong> checked in ·{" "}
+                <strong className="font-semibold text-black">{occupancy}</strong> checked in ·{" "}
                 {assigned} assigned / {table.capacity} capacity
               </p>
             </Card>

@@ -27,7 +27,7 @@ export default async function OrganizationsPage() {
 
           return (
             <Link key={org.id} href={`/organizations/${org.id}`}>
-              <Card className="transition hover:border-neutral-300 dark:hover:border-neutral-700">
+              <Card className="transition hover:border-neutral-300">
                 <div className="flex items-start justify-between">
                   <div>
                     <h3 className="text-[15px] font-semibold">{org.name}</h3>
@@ -36,7 +36,7 @@ export default async function OrganizationsPage() {
                     )}
                   </div>
                   {overCapacity && (
-                    <span className="rounded-full bg-red-50 px-2.5 py-1 text-[11px] font-medium text-red-600 dark:bg-red-950 dark:text-red-400">
+                    <span className="rounded-full bg-red-50 px-2.5 py-1 text-[11px] font-medium text-red-600">
                       Over capacity
                     </span>
                   )}
@@ -44,13 +44,13 @@ export default async function OrganizationsPage() {
 
                 <div className="mt-4 flex items-center gap-4 text-[13px] text-neutral-500">
                   <span>
-                    <strong className="font-semibold text-black dark:text-white">{checkedIn}</strong> checked in
+                    <strong className="font-semibold text-black">{checkedIn}</strong> checked in
                   </span>
                   <span>
-                    <strong className="font-semibold text-black dark:text-white">{submitted}</strong> submitted
+                    <strong className="font-semibold text-black">{submitted}</strong> submitted
                   </span>
                   <span>
-                    <strong className="font-semibold text-black dark:text-white">{org.allocated_seats}</strong> allocated
+                    <strong className="font-semibold text-black">{org.allocated_seats}</strong> allocated
                   </span>
                 </div>
               </Card>

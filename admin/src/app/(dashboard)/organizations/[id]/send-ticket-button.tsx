@@ -16,7 +16,7 @@ export function SendTicketButton({
   const [error, setError] = useState<string | null>(null);
 
   if (!hasEmail) {
-    return <span className="text-[12px] text-neutral-300 dark:text-neutral-700">No email</span>;
+    return <span className="text-[12px] text-neutral-300">No email</span>;
   }
 
   return (
@@ -33,7 +33,7 @@ export function SendTicketButton({
           }
         })
       }
-      className={`text-[12px] font-medium disabled:opacity-50 ${error ? "text-red-600" : "text-neutral-400 hover:text-black dark:hover:text-white"}`}
+      className={`text-[12px] font-medium disabled:opacity-50 ${error ? "text-red-600" : "text-neutral-400 hover:text-black"}`}
     >
       {isPending ? "Sending…" : error ? "Failed" : "Send Ticket"}
     </button>
