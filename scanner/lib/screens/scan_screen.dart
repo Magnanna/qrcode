@@ -11,7 +11,11 @@ class ScanScreen extends StatefulWidget {
 }
 
 class _ScanScreenState extends State<ScanScreen> {
-  final _controller = MobileScannerController();
+  final _controller = MobileScannerController(
+    facing: CameraFacing.back,
+    cameraResolution: const Size(1920, 1080),
+    detectionSpeed: DetectionSpeed.noDuplicates,
+  );
   bool _busy = false;
   ScanResult? _result;
   String? _errorMessage;
