@@ -21,7 +21,7 @@ export default async function LivePage() {
     <div>
       <PageHeader title="Live" subtitle="Real-time check-in activity across all gates" />
 
-      <div className="mb-8 grid grid-cols-3 gap-4">
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <StatTile label="Total Guests" value={totalGuests ?? 0} />
         <StatTile label="Checked In" value={checkedIn ?? 0} />
         <StatTile label="Organizations" value={orgCount ?? 0} />

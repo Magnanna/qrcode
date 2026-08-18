@@ -31,15 +31,17 @@ export default async function GuestsPage({
       <Card className="p-0">
         <div className="divide-y divide-neutral-100">
           {(guests ?? []).map((guest) => (
-            <div key={guest.id} className="flex items-center justify-between px-6 py-3.5">
-              <div>
+            <div key={guest.id} className="flex items-center justify-between gap-3 px-6 py-3.5">
+              <div className="min-w-0">
                 <p className="text-[14px] font-medium">{guest.name ?? "Unnamed guest"}</p>
-                <p className="text-[13px] text-neutral-500">
+                <p className="truncate text-[13px] text-neutral-500">
                   {guest.organizations?.name ?? "—"}
                   {guest.event_tables?.label ? ` · Table ${guest.event_tables.label}` : ""}
                 </p>
               </div>
-              <Badge status={guest.status} />
+              <div className="shrink-0">
+                <Badge status={guest.status} />
+              </div>
             </div>
           ))}
           {(guests ?? []).length === 0 && (

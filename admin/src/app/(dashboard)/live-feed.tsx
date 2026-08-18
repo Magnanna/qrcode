@@ -49,8 +49,8 @@ export function LiveFeed({ initialEvents }: { initialEvents: ScanEventRow[] }) {
   return (
     <div className="divide-y divide-neutral-100">
       {events.map((event) => (
-        <div key={event.id} className="flex items-center justify-between px-6 py-3.5">
-          <div>
+        <div key={event.id} className="flex flex-col gap-2 px-6 py-3.5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
             <p className="text-[14px] font-medium">
               {event.guests?.name ?? (event.guests?.is_walkin ? "Walk-in" : "Unknown")}
             </p>
@@ -60,7 +60,7 @@ export function LiveFeed({ initialEvents }: { initialEvents: ScanEventRow[] }) {
               {event.gate ? ` · Gate ${event.gate}` : ""}
             </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <span className="text-[12px] text-neutral-400">
               {new Date(event.created_at).toLocaleTimeString()}
             </span>

@@ -26,7 +26,7 @@ export function AddStaffForm() {
             }
           })
         }
-        className="grid grid-cols-3 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-3 gap-4"
       >
         <Input name="name" placeholder="Full name" required />
         <Input name="email" type="email" placeholder="Email" required />
@@ -39,11 +39,11 @@ export function AddStaffForm() {
           <option value="admin">Admin</option>
         </select>
         {error && (
-          <p className="col-span-3 rounded-lg bg-red-50 px-3 py-2 text-[13px] text-red-600">
+          <p className="col-span-1 sm:col-span-3 rounded-lg bg-red-50 px-3 py-2 text-[13px] text-red-600">
             {error}
           </p>
         )}
-        <Button type="submit" disabled={isPending} className="col-span-3">
+        <Button type="submit" disabled={isPending} className="col-span-1 sm:col-span-3">
           {isPending ? "Adding…" : "Grant Access"}
         </Button>
       </form>

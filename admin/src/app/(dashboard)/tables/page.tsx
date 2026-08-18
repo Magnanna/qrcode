@@ -22,7 +22,7 @@ export default async function TablesPage() {
         <NewTableForm orgs={orgs ?? []} />
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {(tables ?? []).map((table) => {
           const occupancy = table.guests?.filter((g) => g.status === "checked_in").length ?? 0;
           const assigned = table.guests?.length ?? 0;
@@ -43,7 +43,7 @@ export default async function TablesPage() {
           );
         })}
         {(tables ?? []).length === 0 && (
-          <p className="col-span-3 py-10 text-center text-[14px] text-neutral-500">No tables yet.</p>
+          <p className="col-span-1 sm:col-span-3 py-10 text-center text-[14px] text-neutral-500">No tables yet.</p>
         )}
       </div>
     </div>

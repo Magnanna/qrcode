@@ -28,7 +28,7 @@ export function NewTableForm({ orgs }: { orgs: { id: string; name: string }[] })
             setOpen(false);
           })
         }
-        className="grid grid-cols-3 gap-4"
+        className="grid grid-cols-1 sm:grid-cols-3 gap-4"
       >
         <Input name="label" placeholder="Table label (e.g. A1)" required />
         <Input name="capacity" type="number" placeholder="Capacity" defaultValue={10} min={1} required />
@@ -43,7 +43,7 @@ export function NewTableForm({ orgs }: { orgs: { id: string; name: string }[] })
             </option>
           ))}
         </select>
-        <div className="col-span-3 flex gap-3">
+        <div className="col-span-1 sm:col-span-3 flex gap-3">
           <Button type="submit" disabled={isPending}>
             {isPending ? "Saving…" : "Save Table"}
           </Button>

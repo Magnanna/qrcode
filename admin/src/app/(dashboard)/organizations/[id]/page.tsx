@@ -34,26 +34,26 @@ export default async function OrganizationDetailPage({ params }: { params: Promi
       </Link>
       <PageHeader title={org.name} subtitle={org.coordinator_email ?? undefined} />
 
-      <div className="mb-8 grid grid-cols-3 gap-4">
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <StatTile label="Allocated" value={org.allocated_seats} />
         <StatTile label="Submitted" value={submitted} />
         <StatTile label="Checked In" value={checkedIn} />
       </div>
 
-      <div className="mb-8 grid grid-cols-2 gap-4">
+      <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <AddGuestForm orgId={org.id} tables={tables ?? []} />
         <CsvImport orgId={org.id} />
       </div>
 
       <Card className="p-0">
-        <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
+        <div className="flex flex-col gap-2 border-b border-neutral-200 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
           <h2 className="text-[15px] font-semibold">Guests</h2>
           <BulkSendTickets orgId={org.id} />
         </div>
         <div className="divide-y divide-neutral-100">
           {(guests ?? []).map((guest) => (
-            <div key={guest.id} className="flex items-center justify-between px-6 py-3.5">
-              <div>
+            <div key={guest.id} className="flex flex-col gap-2 px-6 py-3.5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="min-w-0">
                 <p className="text-[14px] font-medium">{guest.name ?? "Unnamed guest"}</p>
                 <p className="text-[13px] text-neutral-500">
                   {guest.event_tables?.label ? `Table ${guest.event_tables.label}` : "No table"}
@@ -61,7 +61,7 @@ export default async function OrganizationDetailPage({ params }: { params: Promi
                   {guest.ticket_sent_at ? " · Ticket sent" : ""}
                 </p>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex shrink-0 flex-wrap items-center gap-3">
                 <Badge status={guest.status} />
                 {guest.status !== "revoked" && (
                   <>
