@@ -4,8 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../services/supabase_service.dart';
 
 class ScanScreen extends StatefulWidget {
-  final VoidCallback onSignedOut;
-  const ScanScreen({super.key, required this.onSignedOut});
+  const ScanScreen({super.key});
 
   @override
   State<ScanScreen> createState() => _ScanScreenState();
@@ -133,6 +132,17 @@ class _ScanScreenState extends State<ScanScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
+                    onTap: () => Navigator.of(context).pop(),
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: CupertinoColors.black.withValues(alpha: 0.5),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: const Icon(CupertinoIcons.xmark, color: CupertinoColors.white, size: 20),
+                    ),
+                  ),
+                  GestureDetector(
                     onTap: _showGateSettings,
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
@@ -141,20 +151,6 @@ class _ScanScreenState extends State<ScanScreen> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(_gate, style: const TextStyle(color: CupertinoColors.white, fontSize: 14, fontWeight: FontWeight.w600)),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () async {
-                      await supabase.auth.signOut();
-                      widget.onSignedOut();
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: CupertinoColors.black.withValues(alpha: 0.5),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Icon(CupertinoIcons.square_arrow_right, color: CupertinoColors.white, size: 20),
                     ),
                   ),
                 ],

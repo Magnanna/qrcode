@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.black,
+      backgroundColor: CupertinoColors.systemGroupedBackground,
       child: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -61,26 +61,26 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: 64,
                   height: 64,
                   decoration: BoxDecoration(
-                    color: CupertinoColors.white,
+                    color: CupertinoColors.black,
                     borderRadius: BorderRadius.circular(18),
                   ),
                   alignment: Alignment.center,
-                  child: const Text('◎', style: TextStyle(fontSize: 28)),
+                  child: const Text('◎', style: TextStyle(fontSize: 28, color: CupertinoColors.white)),
                 ),
                 const SizedBox(height: 20),
                 const Text(
                   'Gatekeeper',
                   style: TextStyle(
                     fontSize: 28,
-                    fontWeight: FontWeight.w600,
-                    color: CupertinoColors.white,
+                    fontWeight: FontWeight.w700,
+                    color: CupertinoColors.black,
                     letterSpacing: -0.5,
                   ),
                 ),
                 const SizedBox(height: 4),
                 const Text(
                   'Sign in to start scanning',
-                  style: TextStyle(fontSize: 15, color: CupertinoColors.systemGrey),
+                  style: TextStyle(fontSize: 15, color: CupertinoColors.secondaryLabel),
                 ),
                 const SizedBox(height: 36),
                 CupertinoTextField(
@@ -90,10 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   autocorrect: false,
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   decoration: BoxDecoration(
-                    color: CupertinoColors.darkBackgroundGray,
+                    color: CupertinoColors.white,
                     borderRadius: BorderRadius.circular(14),
+                    border: Border.all(color: CupertinoColors.systemGrey5),
                   ),
-                  style: const TextStyle(color: CupertinoColors.white),
+                  style: const TextStyle(color: CupertinoColors.black),
                   placeholderStyle: const TextStyle(color: CupertinoColors.systemGrey),
                 ),
                 const SizedBox(height: 12),
@@ -103,10 +104,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: true,
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   decoration: BoxDecoration(
-                    color: CupertinoColors.darkBackgroundGray,
+                    color: CupertinoColors.white,
                     borderRadius: BorderRadius.circular(14),
+                    border: Border.all(color: CupertinoColors.systemGrey5),
                   ),
-                  style: const TextStyle(color: CupertinoColors.white),
+                  style: const TextStyle(color: CupertinoColors.black),
                   placeholderStyle: const TextStyle(color: CupertinoColors.systemGrey),
                   onSubmitted: (_) => _signIn(),
                 ),
@@ -122,12 +124,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: CupertinoButton(
-                    color: CupertinoColors.white,
+                    color: CupertinoColors.black,
                     borderRadius: BorderRadius.circular(14),
                     onPressed: _loading ? null : _signIn,
                     child: _loading
-                        ? const CupertinoActivityIndicator()
-                        : const Text('Sign In', style: TextStyle(color: CupertinoColors.black, fontWeight: FontWeight.w600)),
+                        ? const CupertinoActivityIndicator(color: CupertinoColors.white)
+                        : const Text('Sign In', style: TextStyle(color: CupertinoColors.white, fontWeight: FontWeight.w600)),
                   ),
                 ),
               ],
