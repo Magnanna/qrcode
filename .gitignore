@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+.pub-cache/
+
+# Next.js
+admin/.next/
+admin/out/
+admin/.vercel/
+admin/*.tsbuildinfo
+admin/next-env.d.ts
+
+# env files
+.env
+.env.*
+!.env.example
+
+# Flutter / Dart
+scanner/.dart_tool/
+scanner/.flutter-plugins
+scanner/.flutter-plugins-dependencies
+scanner/build/
+scanner/ios/Pods/
+scanner/ios/Flutter/Flutter.framework
+scanner/ios/Flutter/Flutter.podspec
+scanner/*.iml
+
+# misc
+.DS_Store
+*.pem
